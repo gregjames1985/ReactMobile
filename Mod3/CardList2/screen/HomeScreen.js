@@ -1,16 +1,20 @@
 import React from "react";
-import { Button, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView, ScrollView } from 'react-native-safe-area-context';
+import { Button, StyleSheet, Text, View, ScrollView } from 'react-native';
+import { SafeAreaView} from 'react-native-safe-area-context';
 import { cards } from "../data/cards";
 import CardList from '../components/CardList'
 
 
 const HomeScreen = ()=>{
     return (
+        
+<ScrollView 
+  showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
         <Text>Home</Text>
-    
+        <CardList items={cards}/> 
       </View>
+</ScrollView>
     );
 }
 export default HomeScreen;

@@ -1,8 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const Card = ({item}) => {
-
+    const navigation = useNavigation();
     return (
         <View style={[styles.container]}>
             <View style={[styles.card]}>
@@ -15,6 +16,7 @@ const Card = ({item}) => {
                         <Text style={styles.title}>{item.title}</Text>
                     </View>
                     <Text style={styles.description}>{item.desc}</Text>
+                    <Button title='Details' onPress={() => {navigation.navigate(item.title)}}/>
                 </View>
             </View>
         </View>
@@ -34,6 +36,7 @@ const styles = StyleSheet.create({
     card: {
         borderWidth: 0,
         minHeight: 300,
+        width:350,
         shadowColor: '#000000',
         shadowOffset: {
             width: 2,
